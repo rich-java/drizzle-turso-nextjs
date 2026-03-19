@@ -1,22 +1,24 @@
-import Link from 'next/link'
+import Link from "next/link";
+import { ImageTable } from "./products/image-table";
+import Pagination from "@/components/pagination";
+import { getProducts } from "@/db/queries";
+import { Consts } from "./consts/consts";
 
-export default function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ q: string; page: string; pageSize: string }>
+}) {
+  const search = (await searchParams).q ?? "";
+  const page = (await searchParams).page ?? 1;
+  const pageSize = (await searchParams).pageSize ?? Consts.DEFAULT_PAGE_SIZE;
+
+  const { products, hasNextPage, totalRowsCount } = await getProducts(search, Number(page), Number(pageSize));
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-4 p-24">
-      <h1 className="text-3xl sm:text-7xl font-bold">Visit API</h1>
-
-      <ul className="flex flex-col gap-4">
-        <li>
-          <Link className="text-blue-500 hover:underline" href="/api/v1/users">
-            Get all Users
-          </Link>
-        </li>
-        <li>
-          <Link className="text-blue-500 hover:underline" href="/api/v1/users/1">
-            Get User by Id 1
-          </Link>
-        </li>
-      </ul>
+    <main className="flex min-h-screen flex-col items-center justify-center gap-4 p-6">
+      <ImageTable data={products} />
+      <Pagination hasNextPage={hasNextPage} pageSize={pageSize} currentPage={page} totalRowsCount={totalRowsCount} />
     </main>
-  )
+  );
 }

@@ -12,7 +12,9 @@ export default function MobileNav() {
   const navItems = [
     { name: 'Home', link: '/' },
     { name: 'Users', link: '/users' },
-    { name: 'Notes', link: '/notes' },
+    // { name: 'Notes', link: '/notes' },
+    { name: '[API] Get all Users', link: '/api/v1/users' },
+    { name: '[API] Get User by Id 1', link: '/api/v1/users/1' },
   ]
 
   return (
@@ -26,7 +28,7 @@ export default function MobileNav() {
       <SheetContent className="w-full max-w-xs bg-white p-6 text-neutral-800 dark:bg-neutral-800 dark:text-white">
         <div className="mb-6 flex items-center justify-between">
           <Link className="flex items-center gap-2" href="/">
-            <span className="text-lg font-semibold">Drizzle Turso Nextjs</span>
+            <span className="text-lg font-semibold">Drizzle Turso Next.js</span>
           </Link>
           <SheetClose asChild>
             <Button className="rounded-full" size="icon" variant="ghost">

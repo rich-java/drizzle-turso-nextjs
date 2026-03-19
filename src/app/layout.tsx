@@ -10,8 +10,8 @@ import { ThemeProvider } from 'next-themes'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Drizzle Turso Nextjs',
-  description: 'Drizzle Turso Nextjs',
+  title: 'Drizzle Turso Next.js',
+  description: 'Drizzle Turso Next.js',
 }
 
 export default function RootLayout({
@@ -28,13 +28,15 @@ export default function RootLayout({
               <div className="flex h-full max-h-screen flex-col gap-2">
                 <div className="flex h-[60px] items-center border-b px-5">
                   <Link className="flex items-center gap-2 font-semibold" href="/">
-                    <span className="">Drizzle Turso Nextjs</span>
+                    <span className="">Drizzle Turso Next.js</span>
                   </Link>
                 </div>
                 <div className="flex-1 overflow-auto py-2">
                   <nav className="grid items-start px-4 text-sm font-medium">
                     <NavItem href="/">Home</NavItem>
                     <NavItem href="/users">Users</NavItem>
+                    <NavItem href="/api/v1/users">[API] Get all Users</NavItem>
+                    <NavItem href="/api/v1/users/1">[API] Get User by Id 1</NavItem>
                   </nav>
                 </div>
               </div>
@@ -43,7 +45,7 @@ export default function RootLayout({
               <header className="flex h-14 lg:h-[60px] items-center gap-4 border-b bg-gray-100/40 px-6 dark:bg-gray-800/40 justify-between lg:justify-end">
                 <Link className="flex items-center gap-2 font-semibold lg:hidden" href="/">
                   {/* <Logo /> */}
-                  <span className="">Drizzle Turso Nextjs</span>
+                  <span className="">Drizzle Turso Next.js</span>
                 </Link>
                 <div className="flex flex-row gap-2">
                   <ThemeToggle />

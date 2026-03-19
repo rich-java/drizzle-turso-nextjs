@@ -3,6 +3,7 @@ import { columns } from './columns'
 import { DataTable } from './data-table'
 import { getUsers } from '@/db/queries'
 import type { Metadata } from 'next'
+import DataTablePagination from './data-table-pagination'
 
 export const metadata: Metadata = {
   title: 'Users',
@@ -26,7 +27,7 @@ export default async function UsersPage({
         <h1 className="font-semibold text-lg md:text-2xl">Users</h1>
       </div>
       <DataTable columns={columns} data={users} />
-      <Pagination hasNextPage={hasNextPage} pageSize={pageSize} currentPage={page} totalUsersCount={totalUsersCount} />
+      <DataTablePagination hasNextPage={hasNextPage} pageSize={pageSize} currentPage={page} totalUsersCount={totalUsersCount} />
     </main>
   )
 }

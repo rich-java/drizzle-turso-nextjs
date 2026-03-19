@@ -1,5 +1,16 @@
-import { NextConfig } from 'next'
+import { NextConfig } from "next";
 
-const nextConfig: NextConfig = {}
+const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "flowbite.s3.amazonaws.com",
+        port: "",
+        pathname: "/docs/**",
+      },
+    ],
+  },
+}
 
-export default nextConfig
+export default nextConfig;
