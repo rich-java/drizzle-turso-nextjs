@@ -64,6 +64,6 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Demo
+## Demo on Vercel
 
-<a href="https://drizzle-turso-nextjs.vercel.app" target="_blank" rel="noopener noreferrer">Demo</a>
+[Drizzle Turso Next.js Demo](https://drizzle-turso-nextjs.vercel.app)
